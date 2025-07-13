@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "462130340144",
+    "project_id": "noadty-cbb6f",
+    "storage_bucket": "noadty-cbb6f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462130340144:android:5ebd1f07c1d984e762e8f5",
+        "android_client_info": {
+          "package_name": "com.example.noaddyt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ5RbOYujpVB6kdodBSbTEyBUcw1FbM-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

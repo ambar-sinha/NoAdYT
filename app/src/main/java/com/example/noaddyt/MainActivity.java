@@ -3,6 +3,7 @@ package com.example.noaddyt;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,12 +24,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.ktx.Firebase;
+
 
 public class MainActivity extends AppCompatActivity {
 LinearLayout search, confirm, retry;
 WebView webView;
 EditText url;
+FirebaseFirestore db = FirebaseFirestore.getInstance();
 TextView txt;
+public static final String ver = "1.0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +49,29 @@ TextView txt;
         url = findViewById(R.id.url);
         retry = findViewById(R.id.retry);
         txt = findViewById(R.id.txt);
+        ProgressDialog pb= new ProgressDialog(this);
+        pb.setTitle("Please Wait");
+        pb.setMessage("Checking for Updates");
+        pb.setCancelable(false);
+        pb.show();
         webView.setVisibility(GONE);
         confirm.setVisibility(GONE);
         txt.setVisibility(GONE);
         retry.setVisibility(GONE);
+        db.collection("AppData").document("Updates").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot snapshot) {
+                if(!snapshot.getString("Version").equals(ver))
+                {
+                    startActivity(new Intent(MainActivity.this, Update.class));
+        finish();
+
+                }
+                else {
+                    pb.dismiss();
+                }
+            }
+        });
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
