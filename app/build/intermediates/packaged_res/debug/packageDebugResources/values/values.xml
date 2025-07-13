@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">NoAddYt</string>
+    <string name="gcm_defaultSenderId" translatable="false">462130340144</string>
+    <string name="google_api_key" translatable="false">AIzaSyDZ5RbOYujpVB6kdodBSbTEyBUcw1FbM-4</string>
+    <string name="google_app_id" translatable="false">1:462130340144:android:5ebd1f07c1d984e762e8f5</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDZ5RbOYujpVB6kdodBSbTEyBUcw1FbM-4</string>
+    <string name="google_storage_bucket" translatable="false">noadty-cbb6f.firebasestorage.app</string>
+    <string name="project_id" translatable="false">noadty-cbb6f</string>
+    <style name="Base.Theme.NoAddYt" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.NoAddYt" parent="Base.Theme.NoAddYt"/>
+</resources>
